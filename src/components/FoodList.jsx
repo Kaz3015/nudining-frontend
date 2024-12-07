@@ -161,7 +161,7 @@ function FoodList({ Station, MealPeriod, DiningHall, fetchUserMacros, activeFilt
   return (
     <div>
       <h1 className="text-white text-3xl font-bold mb-6 text-center">{Station}</h1>
-      <div className="sm:justify-center sm:items-center sm:flex-col p-4 flex flex-wrap gap-6 justify-start">
+      <div className="flex justify-center items-center flex-col p-4 gap-6 sm:flex-wrap sm:justify-start sm:items-start sm:flex-row">
         {filteredFoodItems
           .filter(food => food.dining_hall.includes(DiningHall))
           .filter(food => food.meal_period.includes(MealPeriod))
