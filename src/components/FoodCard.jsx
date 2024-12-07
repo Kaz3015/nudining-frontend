@@ -90,7 +90,7 @@ const FoodCard = React.forwardRef(({ className, foodItem, updateRating, ratedFoo
     <div
       ref={ref}
       className={`relative bg-gray-700 text-white rounded-lg shadow-md p-6 cursor-pointer hover:bg-gray-600 transition-all duration-400 ${
-        isExpanded ? "w-auto h-auto" : "w-72 h-36"
+        isExpanded ? "w-auto h-auto" : "w-80 h-36"
       } ${className}`}
       onClick={() => {
         setIsExpanded(!isExpanded);
