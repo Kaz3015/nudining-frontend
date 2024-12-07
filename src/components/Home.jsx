@@ -138,102 +138,114 @@ function Home() {
   ];
 
   return (
-    <>
-      <Joyride
-        steps={steps}
-        run={runTutorial}
-        continuous
-        showProgress
-        showSkipButton
-        callback={handleJoyrideCallback}
-        styles={{
-          options: {
-            zIndex: 10000,
-            primaryColor: '#4CAF50',
-            textColor: '#FFFFFF',
-            backgroundColor: '#333333',
-            overlayColor: 'rgba(0, 0, 0, 0.5)',
-          },
-          tooltip: {
-            backgroundColor: '#374151',
-            color: '#FFFFFF',
-          },
-          buttonNext: {
-            backgroundColor: '#2563EB',
-            color: '#FFFFFF',
-          },
-          buttonBack: {
-            color: '#FFFFFF',
-          },
-          buttonClose: {
-            color: '#FFFFFF',
-          },
-        }}
-      />
-      <button
-        onClick={handleLogout}
-        className="absolute top-4 right-4 bg-gray-700 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-300 ease-in-out transform hover:scale-105"
-      >
-        Logout
-      </button>
-      <button
-        onClick={() => setRunTutorial(true)}
-        className="tutorial-button absolute top-16 left-4 bg-gray-700 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105"
-      >
-        Start Tutorial
-      </button>
-      <div className="flex justify-center space-x-2 sm:space-x-4 mt-4">
-        <button
-          onClick={() => setSelectedComponent("Steast")}
-          className={`py-2 px-4 sm:px-6 rounded-full border-2 ${
-            selectedComponent === "Steast"
-              ? "bg-white text-blue-600 border-blue-600"
-              : "bg-gray-700 text-gray-300 hover:bg-blue-500"
-          }`}
-        >
-          Steast
-        </button>
-        <button
-          onClick={() => setSelectedComponent("IV")}
-          className={`py-2 px-4 sm:px-6 rounded-full border-2 ${
-            selectedComponent === "IV"
-              ? "bg-white text-blue-600 border-blue-600"
-              : "bg-gray-700 text-gray-300 hover:bg-blue-500"
-          }`}
-        >
-          IV
-        </button>
-      </div>
-      <div>
-        {selectedComponent === "Steast" ? (
-          <Steast fetchUserMacros={fetchUserMacros} />
-        ) : (
-          <IV fetchUserMacros={fetchUserMacros} />
-        )}
-        <button
-          className="macro-calculator-button absolute top-4 left-4 bg-gray-700 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105"
-          onClick={handleMacroClick}
-        >
-          Macro Calculator
-        </button>
+      <>
+        <Joyride
+            steps={steps}
+            run={runTutorial}
+            continuous
+            showProgress
+            showSkipButton
+            callback={handleJoyrideCallback}
+            styles={{
+              options: {
+                zIndex: 10000,
+                primaryColor: '#4CAF50',
+                textColor: '#FFFFFF',
+                backgroundColor: '#333333',
+                overlayColor: 'rgba(0, 0, 0, 0.5)',
+              },
+              tooltip: {
+                backgroundColor: '#374151',
+                color: '#FFFFFF',
+              },
+              buttonNext: {
+                backgroundColor: '#2563EB',
+                color: '#FFFFFF',
+              },
+              buttonBack: {
+                color: '#FFFFFF',
+              },
+              buttonClose: {
+                color: '#FFFFFF',
+              },
+            }}
+        />
 
-        {showMacros && (
-          <div ref={macrosRef} className="fixed top-16 left-4 bg-gray-700 p-4 rounded-lg shadow-lg">
-            <h2 className="text-white text-lg sm:text-xl font-bold mb-2">Total Macros</h2>
-            <p className="text-white">Calories: {macros.calories}</p>
-            <p className="text-white">Protein: {macros.protein}g</p>
-            <p className="text-white">Carbs: {macros.carbs}g</p>
-            <p className="text-white">Fat: {macros.fat}g</p>
+        <header className="w-full bg-gray-800 p-4 flex items-center justify-between">
+          <div className="flex space-x-2">
             <button
-              className="mt-4 bg-red-500 text-white py-2 px-4 rounded-full hover:bg-red-600 transition duration-300 ease-in-out transform hover:scale-105"
-              onClick={handleResetMacros}
+                onClick={handleMacroClick}
+                className="macro-calculator-button bg-gray-700 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300 ease-in-out"
             >
-              Reset Macros
+              Macro Calculator
+            </button>
+            <button
+                onClick={() => setRunTutorial(true)}
+                className="tutorial-button bg-gray-700 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300 ease-in-out"
+            >
+              Start Tutorial
             </button>
           </div>
-        )}
-      </div>
-    </>
+          <button
+              onClick={handleLogout}
+              className="bg-gray-700 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-300 ease-in-out"
+          >
+            Logout
+          </button>
+        </header>
+
+        <div className="flex justify-center space-x-2 sm:space-x-4 mt-4">
+          <button
+              onClick={() => setSelectedComponent("Steast")}
+              className={`py-2 px-4 sm:px-6 rounded-full border-2 ${
+                  selectedComponent === "Steast"
+                      ? "bg-white text-blue-600 border-blue-600"
+                      : "bg-gray-700 text-gray-300 hover:bg-blue-500"
+              }`}
+          >
+            Steast
+          </button>
+          <button
+              onClick={() => setSelectedComponent("IV")}
+              className={`py-2 px-4 sm:px-6 rounded-full border-2 ${
+                  selectedComponent === "IV"
+                      ? "bg-white text-blue-600 border-blue-600"
+                      : "bg-gray-700 text-gray-300 hover:bg-blue-500"
+              }`}
+          >
+            IV
+          </button>
+        </div>
+        <div>
+          {selectedComponent === "Steast" ? (
+              <Steast fetchUserMacros={fetchUserMacros}/>
+          ) : (
+              <IV fetchUserMacros={fetchUserMacros}/>
+          )}
+          <button
+              className="macro-calculator-button absolute top-4 left-4 bg-gray-700 text-white py-2 px-2 sm:px-4 rounded hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105"
+              onClick={handleMacroClick}
+          >
+            Macro Calculator
+          </button>
+
+          {showMacros && (
+              <div ref={macrosRef} className="fixed top-16 left-4 bg-gray-700 p-4 rounded-lg shadow-lg">
+                <h2 className="text-white text-lg sm:text-xl font-bold mb-2">Total Macros</h2>
+                <p className="text-white">Calories: {macros.calories}</p>
+                <p className="text-white">Protein: {macros.protein}g</p>
+                <p className="text-white">Carbs: {macros.carbs}g</p>
+                <p className="text-white">Fat: {macros.fat}g</p>
+                <button
+                    className="mt-4 bg-red-500 text-white py-2 px-2 sm:px-4 rounded-full hover:bg-red-600 transition duration-300 ease-in-out transform hover:scale-105"
+                    onClick={handleResetMacros}
+                >
+                  Reset Macros
+                </button>
+              </div>
+          )}
+        </div>
+      </>
   );
 }
 
