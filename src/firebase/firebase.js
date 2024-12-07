@@ -19,6 +19,15 @@ const firebaseConfig = {
   measurementId: measurementId,
 };
 
+console.log(apikey);
+console.log(authDomain);
+console.log(projectId);
+console.log(storageBucket);
+console.log(messagingSenderId);
+console.log(appId);
+console.log(measurementId);
+
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);

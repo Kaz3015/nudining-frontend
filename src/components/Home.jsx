@@ -140,36 +140,36 @@ function Home() {
   return (
     <>
       <Joyride
-  steps={steps}
-  run={runTutorial}
-  continuous
-  showProgress
-  showSkipButton
-  callback={handleJoyrideCallback}
-  styles={{
-    options: {
-      zIndex: 10000,
-      primaryColor: '#4CAF50', // Primary color for buttons and highlights
-      textColor: '#FFFFFF', // Text color
-      backgroundColor: '#333333', // Background color for the tooltip
-      overlayColor: 'rgba(0, 0, 0, 0.5)', // Overlay color
-    },
-    tooltip: {
-      backgroundColor: '#374151', // Tooltip background color
-      color: '#FFFFFF', // Tooltip text color
-    },
-    buttonNext: {
-      backgroundColor: '#2563EB', // Next button background color
-      color: '#FFFFFF', // Next button text color
-    },
-    buttonBack: {
-      color: '#FFFFFF', // Back button text color
-    },
-    buttonClose: {
-      color: '#FFFFFF', // Close button color
-    },
-  }}
-/>
+        steps={steps}
+        run={runTutorial}
+        continuous
+        showProgress
+        showSkipButton
+        callback={handleJoyrideCallback}
+        styles={{
+          options: {
+            zIndex: 10000,
+            primaryColor: '#4CAF50',
+            textColor: '#FFFFFF',
+            backgroundColor: '#333333',
+            overlayColor: 'rgba(0, 0, 0, 0.5)',
+          },
+          tooltip: {
+            backgroundColor: '#374151',
+            color: '#FFFFFF',
+          },
+          buttonNext: {
+            backgroundColor: '#2563EB',
+            color: '#FFFFFF',
+          },
+          buttonBack: {
+            color: '#FFFFFF',
+          },
+          buttonClose: {
+            color: '#FFFFFF',
+          },
+        }}
+      />
       <button
         onClick={handleLogout}
         className="absolute top-4 right-4 bg-gray-700 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-300 ease-in-out transform hover:scale-105"
@@ -182,10 +182,10 @@ function Home() {
       >
         Start Tutorial
       </button>
-      <div className="flex justify-center space-x-4 mt-4">
+      <div className="flex justify-center space-x-2 sm:space-x-4 mt-4">
         <button
           onClick={() => setSelectedComponent("Steast")}
-          className={`py-2 px-6 rounded-full border-2 ${
+          className={`py-2 px-4 sm:px-6 rounded-full border-2 ${
             selectedComponent === "Steast"
               ? "bg-white text-blue-600 border-blue-600"
               : "bg-gray-700 text-gray-300 hover:bg-blue-500"
@@ -195,7 +195,7 @@ function Home() {
         </button>
         <button
           onClick={() => setSelectedComponent("IV")}
-          className={`py-2 px-6 rounded-full border-2 ${
+          className={`py-2 px-4 sm:px-6 rounded-full border-2 ${
             selectedComponent === "IV"
               ? "bg-white text-blue-600 border-blue-600"
               : "bg-gray-700 text-gray-300 hover:bg-blue-500"
@@ -219,7 +219,7 @@ function Home() {
 
         {showMacros && (
           <div ref={macrosRef} className="fixed top-16 left-4 bg-gray-700 p-4 rounded-lg shadow-lg">
-            <h2 className="text-white text-xl font-bold mb-2">Total Macros</h2>
+            <h2 className="text-white text-lg sm:text-xl font-bold mb-2">Total Macros</h2>
             <p className="text-white">Calories: {macros.calories}</p>
             <p className="text-white">Protein: {macros.protein}g</p>
             <p className="text-white">Carbs: {macros.carbs}g</p>

@@ -5,35 +5,35 @@ function Navbar({ handleNavClick, toggleFilter, activeFilters }) {
   return (
     <>
       <div className="text-center">
-        <nav className="inline-flex justify-center m-4 space-x-4 rounded-full border-2 px-4 py-4">
+        <nav className="inline-flex justify-center m-2 sm:m-4 space-x-2 sm:space-x-4 rounded-full border-2 px-2 sm:px-4 py-2 sm:py-4">
           <button
             onClick={() => handleNavClick("Breakfast")}
-            className="bg-gray-700 text-gray-300 p-2 hover:bg-blue-500 rounded-full px-4 border-2"
+            className="bg-gray-700 text-gray-300 p-1 sm:p-2 hover:bg-blue-500 rounded-full px-2 sm:px-4 border-2"
           >
             Breakfast
           </button>
           <button
             onClick={() => handleNavClick("Lunch")}
-            className="bg-gray-700 text-gray-300 p-2 hover:bg-blue-500 rounded-full px-4 border-2"
+            className="bg-gray-700 text-gray-300 p-1 sm:p-2 hover:bg-blue-500 rounded-full px-2 sm:px-4 border-2"
           >
             Lunch
           </button>
           <button
             onClick={() => handleNavClick("Dinner")}
-            className="bg-gray-700 text-gray-300 p-2 hover:bg-blue-500 rounded-full px-4 border-2"
+            className="bg-gray-700 text-gray-300 p-1 sm:p-2 hover:bg-blue-500 rounded-full px-2 sm:px-4 border-2"
           >
             Dinner
           </button>
           <button
             onClick={() => handleNavClick("Everyday")}
-            className="bg-gray-700 text-gray-300 p-2 hover:bg-blue-500 rounded-full px-4 border-2"
+            className="bg-gray-700 text-gray-300 p-1 sm:p-2 hover:bg-blue-500 rounded-full px-2 sm:px-4 border-2"
           >
             Everyday
           </button>
         </nav>
       </div>
       <div className="text-center">
-        <div className="inline-flex justify-center gap-4 mb-6">
+        <div className="inline-flex justify-center gap-2 sm:gap-4 mb-4 sm:mb-6">
           {/* Vegan Filter Button */}
           <div className="relative group">
             <button onClick={() => toggleFilter('vegan')}>
