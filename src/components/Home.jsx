@@ -171,28 +171,29 @@ function Home() {
             }}
         />
 
-        <header className="w-full bg-gray-800 p-4 flex items-center justify-between">
-          <div className="flex space-x-2">
+        <header className="w-full bg-gray-800 py-4">
+          <div className="flex justify-center space-x-2">
             <button
                 onClick={handleMacroClick}
-                className="macro-calculator-button bg-gray-700 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300 ease-in-out"
+                className="macro-calculator-button bg-gray-700 text-white h-12 px-4 rounded hover:bg-blue-600 transition duration-300 ease-in-out flex items-center justify-center"
             >
               Macro Calculator
             </button>
             <button
                 onClick={() => setRunTutorial(true)}
-                className="tutorial-button bg-gray-700 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300 ease-in-out"
+                className="tutorial-button bg-gray-700 text-white h-12 px-4 rounded hover:bg-blue-600 transition duration-300 ease-in-out flex items-center justify-center"
             >
               Start Tutorial
             </button>
+            <button
+                onClick={handleLogout}
+                className="bg-gray-700 text-white h-12 px-4 rounded hover:bg-red-600 transition duration-300 ease-in-out flex items-center justify-center"
+            >
+              Logout
+            </button>
           </div>
-          <button
-              onClick={handleLogout}
-              className="bg-gray-700 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-300 ease-in-out"
-          >
-            Logout
-          </button>
         </header>
+
 
         <div className="flex justify-center space-x-2 sm:space-x-4 mt-4">
           <button
@@ -222,12 +223,6 @@ function Home() {
           ) : (
               <IV fetchUserMacros={fetchUserMacros}/>
           )}
-          <button
-              className="macro-calculator-button absolute top-4 left-4 bg-gray-700 text-white py-2 px-2 sm:px-4 rounded hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105"
-              onClick={handleMacroClick}
-          >
-            Macro Calculator
-          </button>
 
           {showMacros && (
               <div ref={macrosRef} className="fixed top-16 left-4 bg-gray-700 p-4 rounded-lg shadow-lg">

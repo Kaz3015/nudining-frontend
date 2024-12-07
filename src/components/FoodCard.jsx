@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Star from '../Star/Star';
-import MacroTable from "../Macros/MacroTable";
+import Star from './Star';
+import MacroTable from "./MacroTable";
 import { FaLeaf, FaBreadSlice, FaHandRock, FaCheckCircle } from 'react-icons/fa';
 import { getAuth } from 'firebase/auth';
 

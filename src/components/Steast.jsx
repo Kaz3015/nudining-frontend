@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { doSignOut } from '../firebase/auth';
-import FoodList from "../FoodList/FoodList";
+import FoodList from "./FoodList";
 import Navbar from "./Navbar";
 
 const diningHall = "The Eatery at Stetson East";

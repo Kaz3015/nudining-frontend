@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import FoodCard from "../FoodCard/FoodCard";
+import FoodCard from "./FoodCard";
 import { getAuth } from "firebase/auth";
 import { gsap } from 'gsap';
 
@@ -161,7 +161,7 @@ function FoodList({ Station, MealPeriod, DiningHall, fetchUserMacros, activeFilt
   return (
     <div>
       <h1 className="text-white text-3xl font-bold mb-6 text-center">{Station}</h1>
-      <div className="p-4 flex flex-wrap gap-6 justify-start">
+      <div className="sm:justify-center sm:items-center sm:flex-col p-4 flex flex-wrap gap-6 justify-start">
         {filteredFoodItems
           .filter(food => food.dining_hall.includes(DiningHall))
           .filter(food => food.meal_period.includes(MealPeriod))
