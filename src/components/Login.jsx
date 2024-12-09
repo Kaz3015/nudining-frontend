@@ -34,7 +34,6 @@ function Login() {
                     throw new Error('Failed to store user');
                 }
                 const data = await response.json();
-                console.log('User stored:', data);
             } catch (error) {
                 console.error('Error storing user:', error);
             }

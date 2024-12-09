@@ -126,7 +126,6 @@ function FoodList({ Station, MealPeriod, DiningHall, fetchUserMacros, activeFilt
       try {
         const idToken = await user.getIdToken();
         const uid = user.uid;
-        console.log("Payload:", { title, rating: newRating, uid });
         const response = await fetch(import.meta.env.VITE_UPDATE_RATING_URL, {
           method: 'POST',
           headers: {

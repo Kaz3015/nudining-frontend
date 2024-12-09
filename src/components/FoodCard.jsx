@@ -18,7 +18,6 @@ const FoodCard = React.forwardRef(({ className, foodItem, updateRating, ratedFoo
     console.log(`Updating rating for ${foodItem.title} to ${newRating}`);
     updateRating(foodItem.title, newRating)
       .then(response => {
-        console.log('Rating updated successfully:', response);
       })
       .catch(error => {
         console.error('Error updating rating:', error);
@@ -57,11 +56,9 @@ const FoodCard = React.forwardRef(({ className, foodItem, updateRating, ratedFoo
       }
 
       const data = await response.json();
-      console.log('Macros updated:', data);
       setServingSize('');
       setShowInput(false);
       setMacros(data.macros || {});
-      console.log(macros) // Update the macros state with the server response
       fetchUserMacros(); // Refresh user macros in the parent component
     } catch (error) {
       console.error('Error updating macros:', error);
