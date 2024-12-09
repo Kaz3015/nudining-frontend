@@ -76,7 +76,7 @@ function FoodList({ Station, MealPeriod, DiningHall, fetchUserMacros, activeFilt
     if (user) {
       try {
         const idToken = await user.getIdToken();
-        const response = await fetch(import.meta.env.FETCH_UPDATED_FOOD_ITEMS_URL, {
+        const response = await fetch(import.meta.env.VITE_FETCH_UPDATED_FOOD_ITEMS_URL, {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${idToken}`,
@@ -100,7 +100,7 @@ function FoodList({ Station, MealPeriod, DiningHall, fetchUserMacros, activeFilt
     if (user) {
       try {
         const idToken = await user.getIdToken();
-        const response = await fetch(import.meta.env.FETCH_USER_RATED_FOOD_URL, {
+        const response = await fetch(import.meta.env.VITE_FETCH_USER_RATED_FOOD_URL, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -127,7 +127,7 @@ function FoodList({ Station, MealPeriod, DiningHall, fetchUserMacros, activeFilt
         const idToken = await user.getIdToken();
         const uid = user.uid;
         console.log("Payload:", { title, rating: newRating, uid });
-        const response = await fetch(import.meta.env.UPDATE_RATING_URL, {
+        const response = await fetch(import.meta.env.VITE_UPDATE_RATING_URL, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

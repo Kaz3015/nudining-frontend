@@ -38,7 +38,7 @@ const FoodCard = React.forwardRef(({ className, foodItem, updateRating, ratedFoo
       const idToken = await user.getIdToken();
       const uid = user.uid;
 
-      const response = await fetch(import.meta.env.UPDATE_USER_MACROS_URL, {
+      const response = await fetch(import.meta.env.VITE_UPDATE_USER_MACROS_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

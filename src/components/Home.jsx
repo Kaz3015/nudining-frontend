@@ -31,7 +31,7 @@ function Home() {
 
     try {
       const idToken = await user.getIdToken();
-      const response = await fetch(import.meta.env.FETCH_USER_MACROS_URL, {
+      const response = await fetch(import.meta.env.VITE_FETCH_USER_MACROS_URL, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ function Home() {
 
     try {
       const idToken = await user.getIdToken();
-      const response = await fetch(import.meta.env.HANDLE_RESET_USER_MACROS_URL, {
+      const response = await fetch(import.meta.env.VITE_HANDLE_RESET_USER_MACROS_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
