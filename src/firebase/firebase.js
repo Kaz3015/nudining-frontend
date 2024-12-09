@@ -1,13 +1,14 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-const apikey =  import.meta.env.VITE_FIREBASE_API_KEY;
-const authDomain = import.meta.env.VITE_FIREBASE_AUTH_DOMAIN;
-const projectId = import.meta.env.VITE_FIREBASE_PROJECT_ID;
-const storageBucket = import.meta.env.VITE_FIREBASE_STORAGE_BUCKET;
-const messagingSenderId = import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID;
-const appId = import.meta.env.VITE_FIREBASE_APP_ID;
-const measurementId = import.meta.env.VITE_FIREBASE_MEASUREMENT_ID;
+const apikey =  import.meta.env.FIREBASE_API_KEY;
+const authDomain = import.meta.env.FIREBASE_AUTH_DOMAIN;
+const projectId = import.meta.env.FIREBASE_PROJECT_ID;
+const storageBucket = import.meta.env.FIREBASE_STORAGE_BUCKET;
+const messagingSenderId = import.meta.env.FIREBASE_MESSAGING_SENDER_ID;
+const appId = import.meta.env.FIREBASE_APP_ID;
+const measurementId = import.meta.env.FIREBASE_MEASUREMENT_ID;
+console.log(apikey);
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: apikey,
