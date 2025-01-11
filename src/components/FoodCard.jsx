@@ -87,7 +87,7 @@ const FoodCard = React.forwardRef(({ className, foodItem, updateRating, ratedFoo
     <div
       ref={ref}
       className={`relative bg-gray-700 text-white rounded-lg shadow-md p-6 cursor-pointer hover:bg-gray-600 transition-all duration-400 ${
-        isExpanded ? "w-auto h-auto" : "w-80 h-36"
+        isExpanded ? "w-auto h-auto min-w-96" : "w-80 h-36"
       } ${className}`}
       onClick={() => {
         setIsExpanded(!isExpanded);
@@ -98,7 +98,7 @@ const FoodCard = React.forwardRef(({ className, foodItem, updateRating, ratedFoo
         <div className="absolute top-2 right-2 flex justify-end items-start space-x-2">
           {isVegetarian && (
             <div className="relative group">
-              <FaLeaf title="Vegan" className="text-green-400" />
+              <FaLeaf title="Vegetarian" className="text-green-400" />
               <span className="absolute bottom-full mb-2 hidden group-hover:block bg-gray-700 text-white text-xs rounded py-1 px-2">
                 Vegetarian
               </span>
