@@ -8,7 +8,7 @@ function Navbar({ handleNavClick, toggleFilter, activeFilters, currentMealPeriod
         <nav className="inline-flex justify-center m-2 sm:m-4 space-x-2 sm:space-x-4 rounded-full border-2 px-2 sm:px-4 py-2 sm:py-4">
           <button
             onClick={() => handleNavClick("Breakfast")}
-            className={`bg-gray-700 text-gray-300 p-1 sm:p-2 hover:bg-blue-500 rounded-full px-2 sm:px-4 border-2 ${ 
+            className={`p-1 sm:p-2 hover:bg-blue-500 rounded-full px-2 sm:px-4 border-2 ${ 
             currentMealPeriod === "Breakfast"
               ? "bg-white text-blue-600 border-blue-600"
               : "bg-gray-700 text-gray-300"}`}
@@ -17,7 +17,7 @@ function Navbar({ handleNavClick, toggleFilter, activeFilters, currentMealPeriod
           </button>
           <button
             onClick={() => handleNavClick("Lunch")}
-            className={`bg-gray-700 text-gray-300 p-1 sm:p-2 hover:bg-blue-500 rounded-full px-2 sm:px-4 border-2 ${ 
+            className={`p-1 sm:p-2 hover:bg-blue-500 rounded-full px-2 sm:px-4 border-2 ${ 
             currentMealPeriod === "Lunch"
               ? "bg-white text-blue-600 border-blue-600"
               : "bg-gray-700 text-gray-300"}`}
@@ -26,7 +26,7 @@ function Navbar({ handleNavClick, toggleFilter, activeFilters, currentMealPeriod
           </button>
           <button
             onClick={() => handleNavClick("Dinner")}
-            className={`bg-gray-700 text-gray-300 p-1 sm:p-2 hover:bg-blue-500 rounded-full px-2 sm:px-4 border-2 ${ 
+            className={`p-1 sm:p-2 hover:bg-blue-500 rounded-full px-2 sm:px-4 border-2 ${ 
             currentMealPeriod === "Dinner"
               ? "bg-white text-blue-600 border-blue-600"
               : "bg-gray-700 text-gray-300"}`}
@@ -35,7 +35,7 @@ function Navbar({ handleNavClick, toggleFilter, activeFilters, currentMealPeriod
           </button>
           <button
             onClick={() => handleNavClick("Everyday")}
-            className={`bg-gray-700 text-gray-300 p-1 sm:p-2 hover:bg-blue-500 rounded-full px-2 sm:px-4 border-2 ${ 
+            className={`p-1 sm:p-2 hover:bg-blue-500 rounded-full px-2 sm:px-4 border-2 ${ 
             currentMealPeriod === "Everyday"
               ? "bg-white text-blue-600 border-blue-600"
               : "bg-gray-700 text-gray-300"}`}
