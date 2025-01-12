@@ -26,7 +26,8 @@ function Steast({ fetchUserMacros }) {
 
   return (
     <>
-      <Navbar handleNavClick={handleNavClick} toggleFilter={toggleFilter} activeFilters={activeFilters} />
+      <Navbar handleNavClick={handleNavClick} toggleFilter={toggleFilter} activeFilters={activeFilters}
+              currentMealPeriod={mealPeriod} />
       {mealPeriod === "Everyday" ? (
         <FoodList
           Station={"EVERYDAY"}

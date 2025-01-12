@@ -4,9 +4,9 @@ import { doSignOut } from '../firebase/auth';
 import FoodList from "./FoodList";
 import Navbar from "./Navbar";
 
-const diningHall = "The Eatery at Stetson East";
+const diningHall = "United Table at International Village";
 
-function Steast({ fetchUserMacros }) {
+function IV({ fetchUserMacros }) {
   const [mealPeriod, setMealPeriod] = useState("Breakfast");
   const [activeFilters, setActiveFilters] = useState([]);
   const navigate = useNavigate();
@@ -26,7 +26,8 @@ function Steast({ fetchUserMacros }) {
 
   return (
     <>
-      <Navbar handleNavClick={handleNavClick} toggleFilter={toggleFilter} activeFilters={activeFilters} />
+      <Navbar handleNavClick={handleNavClick} toggleFilter={toggleFilter} activeFilters={activeFilters}
+              currentMealPeriod={mealPeriod} />
       {mealPeriod === "Everyday" ? (
         <FoodList
           Station={"EVERYDAY"}
@@ -92,4 +93,4 @@ function Steast({ fetchUserMacros }) {
   );
 }
 
-export default Steast;
+export default IV;
