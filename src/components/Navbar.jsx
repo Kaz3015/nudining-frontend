@@ -11,7 +11,7 @@ function Navbar({ handleNavClick, toggleFilter, activeFilters, currentMealPeriod
             className={`bg-gray-700 text-gray-300 p-1 sm:p-2 hover:bg-blue-500 rounded-full px-2 sm:px-4 border-2 ${ 
             currentMealPeriod === "Breakfast"
               ? "bg-white text-blue-600 border-blue-600"
-              : ""}`}
+              : "bg-gray-700 text-gray-300"}`}
           >
             Breakfast
           </button>
@@ -20,7 +20,7 @@ function Navbar({ handleNavClick, toggleFilter, activeFilters, currentMealPeriod
             className={`bg-gray-700 text-gray-300 p-1 sm:p-2 hover:bg-blue-500 rounded-full px-2 sm:px-4 border-2 ${ 
             currentMealPeriod === "Lunch"
               ? "bg-white text-blue-600 border-blue-600"
-              : ""}`}
+              : "bg-gray-700 text-gray-300"}`}
           >
             Lunch
           </button>
@@ -29,7 +29,7 @@ function Navbar({ handleNavClick, toggleFilter, activeFilters, currentMealPeriod
             className={`bg-gray-700 text-gray-300 p-1 sm:p-2 hover:bg-blue-500 rounded-full px-2 sm:px-4 border-2 ${ 
             currentMealPeriod === "Dinner"
               ? "bg-white text-blue-600 border-blue-600"
-              : ""}`}
+              : "bg-gray-700 text-gray-300"}`}
           >
             Dinner
           </button>
@@ -38,7 +38,7 @@ function Navbar({ handleNavClick, toggleFilter, activeFilters, currentMealPeriod
             className={`bg-gray-700 text-gray-300 p-1 sm:p-2 hover:bg-blue-500 rounded-full px-2 sm:px-4 border-2 ${ 
             currentMealPeriod === "Everyday"
               ? "bg-white text-blue-600 border-blue-600"
-              : ""}`}
+              : "bg-gray-700 text-gray-300"}`}
           >
             Everyday
           </button>
