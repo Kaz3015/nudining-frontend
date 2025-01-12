@@ -6,7 +6,7 @@ import Navbar from './Navbar';
 
 const diningHall = 'United Table at International Village';
 
-function IV({ fetchUserMacros }) {
+function IV({ fetchUserMacros, showPopupMessage, getMealPeriod }) {
   const [mealPeriod, setMealPeriod] = useState('Breakfast');
   const [activeFilters, setActiveFilters] = useState([]);
   const navigate = useNavigate();
@@ -22,6 +22,7 @@ function IV({ fetchUserMacros }) {
 
   const handleNavClick = (period) => {
     setMealPeriod(period);
+    getMealPeriod(period);
   };
 
   return (
@@ -31,6 +32,7 @@ function IV({ fetchUserMacros }) {
         toggleFilter={toggleFilter}
         activeFilters={activeFilters}
         currentMealPeriod={mealPeriod}
+        popupMessage={showPopupMessage}
       />
 
       {mealPeriod === 'Everyday' ? (
@@ -40,6 +42,7 @@ function IV({ fetchUserMacros }) {
           fetchUserMacros={fetchUserMacros}
           DiningHall={diningHall}
           activeFilters={activeFilters}
+          popupMessage={showPopupMessage}
         />
       ) : mealPeriod === 'Breakfast' ? (
         <>
@@ -49,6 +52,7 @@ function IV({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={'SOUP'}
@@ -56,6 +60,7 @@ function IV({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={'ASIAN KITCHEN'}
@@ -63,6 +68,7 @@ function IV({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={'UNITED KITCHEN'}
@@ -70,6 +76,7 @@ function IV({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={'FUSION GRILL'}
@@ -77,6 +84,7 @@ function IV({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
         </>
       ) : mealPeriod === 'Lunch' || mealPeriod === 'Dinner' ? (
@@ -87,6 +95,7 @@ function IV({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={'DELCIOUS WITHOUT'}
@@ -94,6 +103,7 @@ function IV({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={'POMODORO KITCHEN'}
@@ -101,6 +111,7 @@ function IV({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={'SPICE BOWL'}
@@ -108,6 +119,7 @@ function IV({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={'SWEETS AT THE TABLE'}
@@ -115,6 +127,7 @@ function IV({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={'MEZZE TABLE'}
@@ -122,6 +135,7 @@ function IV({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={'SUSHI'}
@@ -129,6 +143,7 @@ function IV({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={'SOUP'}
@@ -136,6 +151,7 @@ function IV({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={'ASIAN KITCHEN TOPPINGS'}
@@ -143,6 +159,7 @@ function IV({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={'ASIAN KITCHEN'}
@@ -150,6 +167,7 @@ function IV({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={'UNITED KTICHEN'}
@@ -157,6 +175,7 @@ function IV({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={'FUSION GRILL'}
@@ -164,6 +183,7 @@ function IV({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={'GLOBAL BOWLS'}
@@ -171,6 +191,7 @@ function IV({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
 
         </>

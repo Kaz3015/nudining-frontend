@@ -4,7 +4,7 @@ import MacroTable from "./MacroTable";
 import { FaLeaf, FaBreadSlice, FaHandRock, FaCheckCircle } from 'react-icons/fa';
 import { getAuth } from 'firebase/auth';
 
-const FoodCard = React.forwardRef(({ className, foodItem, updateRating, ratedFood, fetchUserMacros }, ref) => {
+const FoodCard = React.forwardRef(({ className, foodItem, updateRating, ratedFood, fetchUserMacros, showPopupMessage }, ref) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [servingSize, setServingSize] = useState('');
   const [showInput, setShowInput] = useState(false);
@@ -15,6 +15,13 @@ const FoodCard = React.forwardRef(({ className, foodItem, updateRating, ratedFoo
 
   const handleRating = (event, newRating) => {
     event.stopPropagation();
+    const user = getAuth().currentUser;
+
+    if (!user) {
+      showPopupMessage();
+      return;
+    }
+
     console.log(`Updating rating for ${foodItem.title} to ${newRating}`);
     updateRating(foodItem.title, newRating)
       .then(response => {

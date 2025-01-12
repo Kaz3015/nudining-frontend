@@ -6,10 +6,11 @@ import Navbar from "./Navbar";
 
 const diningHall = "The Eatery at Stetson East";
 
-function Steast({ fetchUserMacros }) {
+function Steast({ fetchUserMacros, showPopupMessage, getMealPeriod }) {
   const [mealPeriod, setMealPeriod] = useState("Breakfast");
   const [activeFilters, setActiveFilters] = useState([]);
   const navigate = useNavigate();
+
 
   // Function to toggle filters on and off
   const toggleFilter = (filter) => {
@@ -22,6 +23,7 @@ function Steast({ fetchUserMacros }) {
 
   const handleNavClick = (period) => {
     setMealPeriod(period);
+    getMealPeriod(period);
   };
 
   return (
@@ -35,6 +37,7 @@ function Steast({ fetchUserMacros }) {
           fetchUserMacros={fetchUserMacros}
           DiningHall={diningHall}
           activeFilters={activeFilters}
+          popupMessage={showPopupMessage}
         />
       ) : (
         <>
@@ -44,6 +47,7 @@ function Steast({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={"RICE STATION"}
@@ -51,6 +55,7 @@ function Steast({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={"HOMESTYLE"}
@@ -58,6 +63,7 @@ function Steast({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={"MENUTAINMENT"}
@@ -65,6 +71,7 @@ function Steast({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={"SOUP"}
@@ -72,6 +79,7 @@ function Steast({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={"FRESH 52 B"}
@@ -79,6 +87,7 @@ function Steast({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
           <FoodList
             Station={"SWEET SHOPPE"}
@@ -86,6 +95,7 @@ function Steast({ fetchUserMacros }) {
             fetchUserMacros={fetchUserMacros}
             DiningHall={diningHall}
             activeFilters={activeFilters}
+            popupMessage={showPopupMessage}
           />
         </>
       )}

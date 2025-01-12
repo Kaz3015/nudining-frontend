@@ -3,7 +3,7 @@ import FoodCard from "./FoodCard";
 import { getAuth } from "firebase/auth";
 import { gsap } from 'gsap';
 
-function FoodList({ Station, MealPeriod, DiningHall, fetchUserMacros, activeFilters }) {
+function FoodList({ Station, MealPeriod, DiningHall, fetchUserMacros, activeFilters, popupMessage }) {
   const [foodList, setFoodItems] = useState([]);
   const [ratedFood, setRatedFood] = useState([]);
   const [cardsRendered, setCardsRendered] = useState(false);
@@ -72,14 +72,10 @@ function FoodList({ Station, MealPeriod, DiningHall, fetchUserMacros, activeFilt
   }, [cardsRendered]);
 
   const fetchUpdatedFoodItems = async () => {
-    const user = getAuth().currentUser;
-    if (user) {
-      try {
-        const idToken = await user.getIdToken();
+    try{
         const response = await fetch(import.meta.env.VITE_FETCH_UPDATED_FOOD_ITEMS_URL, {
           headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${idToken}`,
           },
         });
         if (!response.ok) {
@@ -90,9 +86,6 @@ function FoodList({ Station, MealPeriod, DiningHall, fetchUserMacros, activeFilt
       } catch (error) {
         console.error("Error fetching food items:", error);
       }
-    } else {
-      console.error("User is not authenticated");
-    }
   };
 
   const fetchUserRatedFood = async () => {
@@ -177,6 +170,7 @@ function FoodList({ Station, MealPeriod, DiningHall, fetchUserMacros, activeFilt
               updateRating={updateRating}
               ratedFood={ratedFood}
               fetchUserMacros={fetchUserMacros}
+                showPopupMessage={popupMessage}
             />
           ))}
       </div>
